@@ -32,8 +32,10 @@ class TerminalTest extends TestCase
         $terminal->scanItem('YB');
         $terminal->scanItem('ZA');
         $terminal->scanItem('ZA');
+        /** @var float $total */
+        $total = $terminal->getTotal();
 
-        $this->assertEquals(32.40, $terminal->getTotal(), 'Failed to return 32.40');
+        $this->assertEquals(32.40, $total, 'Failed to return 32.40');
     }
 
     /**
@@ -50,8 +52,10 @@ class TerminalTest extends TestCase
         $terminal->scanItem('FC');
         $terminal->scanItem('FC');
         $terminal->scanItem('FC');
+        /** @var float $total */
+        $total = $terminal->getTotal();
 
-        $this->assertEquals(7.25, $terminal->getTotal(), 'Failed to return 7.25');
+        $this->assertEquals(7.25, $total, 'Failed to return 7.25');
     }
 
     /**
@@ -65,7 +69,9 @@ class TerminalTest extends TestCase
         $terminal->scanItem('YB');
         $terminal->scanItem('FC');
         $terminal->scanItem('GD');
+        /** @var float $total */
+        $total = $terminal->getTotal();
 
-        $this->assertEquals(15.40, $terminal->getTotal(), 'Failed to return 15.40');
+        $this->assertEquals(15.40, $total, 'Failed to return 15.40');
     }
 }
